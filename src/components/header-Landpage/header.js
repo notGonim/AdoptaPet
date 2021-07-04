@@ -6,18 +6,18 @@ export default function Header() {
 
 
     return (
-        <header className="h-16  bg-white border-b border-gray-primary  mb-8">
+        <header className="h-16  bg-white border-b border-gray-primary ">
             <div className="container flex justify-between align-items items-center mx-auto max-w-screen-lg h-full">
                 <div className="">
                     <img src={process.env.PUBLIC_URL + "favicon.ico"} alt="logo" className="bg-auto bg-no-repeat bg-center " />
                 </div>
                 <div className="flex items-center justify-center align-items  ">
 
-                    <Link to="/" className="font-bold  text-gray-700	text-l   mr-8">   PETS</ Link>
+                    <Link to="/" className="font-bold  text-gray-700	text-l   mr-8">   Pets</ Link>
 
-                    <Link to="/" className="font-bold  text-gray-700	text-l   mr-8">   PETS</ Link>
+                    <Link to="/" className="font-bold  text-gray-700	text-l   mr-8">   shelters</ Link>
 
-                    <Link to="/" className="font-bold  text-gray-700	text-l   ">   PETS</ Link>
+                    <Link to="/" className="font-bold  text-gray-700	text-l   ">   Contact</ Link>
 
 
                 </div>
