@@ -1,18 +1,25 @@
-import './App.css';
-import {
-  BrowserRouter as Router, Route, Link
-} from "react-router-dom";
-import LandPage from './pages/LandPage'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import * as ROUTES from './constants/routes'
+import { lazy, Suspense } from "react";
+
+
+
+
+
+const Landpage = lazy(() => import('./pages/LandPage'))
+
+
+
 
 function App() {
   return (
-    <>
-      <Router>
-        <Route path='/' component={LandPage} />
-      </Router>
-
-
-    </>
+    <Router>
+    <Suspense fallback={<p>Loading ...</p>}>
+      <Switch>
+        <Route  path={ROUTES.LANDPAGE} exact component={Landpage} />
+      </Switch>
+    </Suspense>
+  </Router>
   );
 }
 
