@@ -14,7 +14,8 @@ export default function Shelters() {
 
     return (
 
-        <div className="container  p-11 flex  flex-col items-center  max-w-full  ">
+        <div className="container h-screen	 p-11 flex  flex-col items-center  max-w-full  ">
+            <h2 className="text-center text-6xl  mb-5 font-medium">Our Shelters</h2>
             <div className="flex  justify-around items-center ">
                 <img src={shelter1} alt="shelter1" className=" w-52 h-52  object-cover" />
                 <img src={shelter2} alt="shelter2" className=" w-52 h-52  object-cover" />
