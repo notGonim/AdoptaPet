@@ -1,5 +1,4 @@
 import React from 'react'
-import pet from '../../assets/pet.jpg'
 import man from '../../assets/man.svg'
 
 
