@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import cat2 from '../assets/cat2.svg'
 import cat1 from '../assets/cat1.svg'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
 import * as ROUTES from '../constants/routes'
+import FirebaseContext from '../context/firebase.context'
 
 
 export default function SignIn() {
@@ -12,6 +13,7 @@ export default function SignIn() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [err, setError] = useState('')
+    const { firebase } = useContext(FirebaseContext)
 
     const isInvalid = password === '' || email === ''
 
@@ -19,7 +21,7 @@ export default function SignIn() {
     const handleLogin = async (e) => {
         e.preventDefault()
         try {
-          
+            await firebase.auth().signInWithEmailAndPassword(email, password)
             history.push(ROUTES.DASHBOARD)
         } catch (err) {
             setEmail('')
@@ -34,12 +36,12 @@ export default function SignIn() {
     return (
         <div className="container flex mx-auto max-w-screen-md items-center h-screen">
             <div className="flex w-3/5">
-            <img src={cat2} alt="pet"  className="mr-10"  />
+                <img src={cat2} alt="pet" className="mr-10" />
             </div>
             <div className="flex flex-col w-2/5">
                 <div className="flex flex-col items-center bg-white p-4 border rounded border-gray-primary mb-4 ">
                     <h1 className="flex justify-center w-full">
-                    <img src={cat1} alt="pet" className="p-5 bg-no-repeat bg-center " /> 
+                        <img src={cat1} alt="pet" className="p-5 bg-no-repeat bg-center " />
                     </h1>
                     {err && <p className="mb-4 text-xs text-red-500">{err}</p>}
                     <form onSubmit={handleLogin} method="POST">
