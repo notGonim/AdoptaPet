@@ -11,6 +11,7 @@ import UserContext from "./context/user.context";
 const Landpage = lazy(() => import('./pages/LandPage'))
 const Signin = lazy(() => import('./pages/SigninPage'))
 const Signup = lazy(() => import('./pages/SignupPage'))
+const Home = lazy(() => import('./pages/home'))
 
 
 
@@ -25,6 +26,7 @@ function App() {
         <Suspense fallback={<p>Loading ...</p>}>
           <Switch>
             <Route path={ROUTES.LANDPAGE} exact component={Landpage} />
+            <Route path={ROUTES.DASHBOARD} exact component={Home} />
             <Route path={ROUTES.LOGIN} exact component={Signin} />
             <Route path={ROUTES.SIGNUP} exact component={Signup} />
           </Switch>

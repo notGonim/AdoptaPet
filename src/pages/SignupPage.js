@@ -1,10 +1,12 @@
-import React, {  useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
 import * as ROUTES from '../constants/routes'
 import cat1 from '../assets/cat1.svg'
 
 import cat3 from '../assets/cat3.svg'
+import FirebaseContext from '../context/firebase.context'
+import { doesUsernameExist } from '../services/firebase.services'
 
 
 export default function Signup() {
@@ -15,14 +17,46 @@ export default function Signup() {
     const [fullname, setFullname] = useState('')
     const [password, setPassword] = useState('')
     const [err, setError] = useState('')
+    const { firebase } = useContext(FirebaseContext)
 
     const isInvalid = username === '' || fullname === '' || password === '' || email === ''
 
 
     const handleSignup = async (e) => {
         e.preventDefault()
-      
+        const usernameExists = await doesUsernameExist(username)
+        if (!usernameExists.length) {
+            try {
+                const createdUserResult = await firebase.auth().createUserWithEmailAndPassword(email, password)
+                //authentication
+                //
+                await createdUserResult.user.updateProfile({
+                    displayName: username
+                })
+                //create a user 
+                await firebase.firestore().collection('users').add(
+                    {
+                        userId: createdUserResult.user.uid,
+                        username: username.toLowerCase(),
+                        fullname,
+                        emailAddress: email.toLowerCase(),
+                        pets: [],
+                        dateCreated: Date.now()
+                    }
+                )
+                history.push(ROUTES.DASHBOARD)
+            } catch (err) {
+                setFullname('')
+                setUsername('')
+                setPassword('')
+                setEmail('')
+                setError(err.message)
+            }
+        } else {
+            setError('That username is already taken, please try another. ')
+        }
     }
+
 
     useEffect(() => {
         document.title = 'Sign Up - InstaGo'
@@ -31,12 +65,12 @@ export default function Signup() {
     return (
         <div className="container flex mx-auto max-w-screen-md items-center h-screen">
             <div className="flex w-3/5">
-            <img src={cat3} alt="pet"  className="mr-10"  />
+                <img src={cat3} alt="pet" className="mr-10" />
             </div>
             <div className="flex flex-col w-2/5">
                 <div className="flex flex-col items-center bg-white p-4 border rounded border-gray-primary mb-4 ">
                     <h1 className="flex justify-center w-full">
-                    <img src={cat1} alt="pet" className="p-5 bg-no-repeat bg-center " /> 
+                        <img src={cat1} alt="pet" className="p-5 bg-no-repeat bg-center " />
                     </h1>
                     {err && <p className="mb-4 text-xs text-red-500">{err}</p>}
                     <form onSubmit={handleSignup} method="POST">
