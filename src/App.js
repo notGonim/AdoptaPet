@@ -3,6 +3,7 @@ import * as ROUTES from './constants/routes'
 import { lazy, Suspense } from "react";
 import useAuthListener from "./hooks/useAuth.hook";
 import UserContext from "./context/user.context";
+import IsUserLoggedIn from "./helpers/isUserLoggedIn";
 
 
 
@@ -27,9 +28,13 @@ function App() {
           <Switch>
             <Route path={ROUTES.LANDPAGE} exact component={Landpage} />
             <Route path={ROUTES.DASHBOARD} exact component={Home} />
-            <Route path={ROUTES.LOGIN} exact component={Signin} />
-            <Route path={ROUTES.SIGNUP} exact component={Signup} />
-          </Switch>
+
+            <IsUserLoggedIn user={user} loggedInPath={ROUTES.DASHBOARD} path={ROUTES.LOGIN}>
+              <Signin />
+            </IsUserLoggedIn>
+            <IsUserLoggedIn user={user} loggedInPath={ROUTES.DASHBOARD} path={ROUTES.SIGNUP}>
+              <Signup />
+            </IsUserLoggedIn>          </Switch>
         </Suspense>
       </Router>
     </UserContext.Provider>
