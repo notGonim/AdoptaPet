@@ -4,6 +4,7 @@ import { lazy, Suspense } from "react";
 import useAuthListener from "./hooks/useAuth.hook";
 import UserContext from "./context/user.context";
 import IsUserLoggedIn from "./helpers/isUserLoggedIn";
+import ProtectedRoute from "./helpers/protectedRoutes";
 
 
 
@@ -26,15 +27,19 @@ function App() {
       <Router>
         <Suspense fallback={<p>Loading ...</p>}>
           <Switch>
-            <Route path={ROUTES.LANDPAGE} exact component={Landpage} />
-            <Route path={ROUTES.DASHBOARD} exact component={Home} />
-
+          <ProtectedRoute user={user} path={ROUTES.DASHBOARD} exact   >
+              <Home />
+            </ProtectedRoute>
+            <IsUserLoggedIn user={user} loggedInPath={ROUTES.DASHBOARD} path={ROUTES.LANDPAGE}>
+              <Landpage />
+            </IsUserLoggedIn>       
             <IsUserLoggedIn user={user} loggedInPath={ROUTES.DASHBOARD} path={ROUTES.LOGIN}>
               <Signin />
             </IsUserLoggedIn>
             <IsUserLoggedIn user={user} loggedInPath={ROUTES.DASHBOARD} path={ROUTES.SIGNUP}>
               <Signup />
-            </IsUserLoggedIn>          </Switch>
+            </IsUserLoggedIn>
+          </Switch>
         </Suspense>
       </Router>
     </UserContext.Provider>
