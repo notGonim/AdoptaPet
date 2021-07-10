@@ -59,7 +59,7 @@ export default function Signup() {
 
 
     useEffect(() => {
-        document.title = 'Sign Up - InstaGo'
+        document.title = 'Sign Up - Pets'
     }, [])
 
     return (
