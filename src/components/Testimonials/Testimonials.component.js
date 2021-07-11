@@ -85,7 +85,7 @@ export default function Testimonials() {
                             <h3 className="text-xs opacity-50">Nursing and Rehabilitation</h3>
                         </div>
                     </div>
-                    <p className="mt-4 font-bold text-xl leading-tight">We love having visits from Creature Comfort at our school.  The animals are wonderful as well as their handlers.  Each visit makes not only the students smile but the staff as well. </p>
+                    <p className="mt-4 font-bold text-xl leading-tight">We love having visits from Creature Comfort at our school.  The animals are wonderful as well as their handlers.  </p>
 
                 </div>
             </div>
