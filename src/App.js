@@ -5,11 +5,13 @@ import useAuthListener from "./hooks/useAuth.hook";
 import UserContext from "./context/user.context";
 import IsUserLoggedIn from "./helpers/isUserLoggedIn";
 import ProtectedRoute from "./helpers/protectedRoutes";
+import Spinner from "./components/spinner/spinner.component";
 
 
 
 
-
+const SheltersPage = lazy(() => import('./pages/sheltersPage'))
+const StoriesPage = lazy(() => import('./pages/storiesPage'))
 const Landpage = lazy(() => import('./pages/LandPage'))
 const Signin = lazy(() => import('./pages/SigninPage'))
 const Signup = lazy(() => import('./pages/SignupPage'))
@@ -25,14 +27,20 @@ function App() {
   return (
     <UserContext.Provider value={{ user }}>
       <Router>
-        <Suspense fallback={<p>Loading ...</p>}>
+        <Suspense fallback={<Spinner />}>
           <Switch>
-          <ProtectedRoute user={user} path={ROUTES.DASHBOARD} exact   >
+            <ProtectedRoute user={user} path={ROUTES.DASHBOARD} exact   >
               <Home />
+            </ProtectedRoute>
+            <ProtectedRoute user={user} path={ROUTES.SHELTERS} exact   >
+              <SheltersPage />
+            </ProtectedRoute>
+            <ProtectedRoute user={user} path={ROUTES.STORIES} exact   >
+              <StoriesPage />
             </ProtectedRoute>
             <IsUserLoggedIn user={user} loggedInPath={ROUTES.DASHBOARD} path={ROUTES.LANDPAGE}>
               <Landpage />
-            </IsUserLoggedIn>       
+            </IsUserLoggedIn>
             <IsUserLoggedIn user={user} loggedInPath={ROUTES.DASHBOARD} path={ROUTES.LOGIN}>
               <Signin />
             </IsUserLoggedIn>

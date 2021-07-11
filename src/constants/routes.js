@@ -1,5 +1,7 @@
 export const LANDPAGE = '/'
 export const DASHBOARD = '/home'
+export const STORIES = '/stories'
+export const SHELTERS = '/shelters'
 export const LOGIN = '/signin'
 export const SIGNUP = '/signup'
 export const PROFILE = '/p/:username'
