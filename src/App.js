@@ -16,6 +16,9 @@ const Landpage = lazy(() => import('./pages/LandPage'))
 const Signin = lazy(() => import('./pages/SigninPage'))
 const Signup = lazy(() => import('./pages/SignupPage'))
 const Home = lazy(() => import('./pages/home'))
+const Profile = lazy(() => import('./pages/profile.page'))
+const Setting = lazy(() => import('./pages/setting.page'))
+
 
 
 
@@ -37,6 +40,12 @@ function App() {
             </ProtectedRoute>
             <ProtectedRoute user={user} path={ROUTES.STORIES} exact   >
               <StoriesPage />
+            </ProtectedRoute>
+            <ProtectedRoute user={user} path={ROUTES.PROFILE} exact   >
+              <Profile />
+            </ProtectedRoute>
+            <ProtectedRoute user={user} path={ROUTES.SETTING} exact   >
+              <Setting />
             </ProtectedRoute>
             <IsUserLoggedIn user={user} loggedInPath={ROUTES.DASHBOARD} path={ROUTES.LANDPAGE}>
               <Landpage />
