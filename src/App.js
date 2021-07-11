@@ -26,6 +26,7 @@ const Setting = lazy(() => import('./pages/setting.page'))
 function App() {
 
   const { user } = useAuthListener()
+  
 
   return (
     <UserContext.Provider value={{ user }}>
@@ -47,13 +48,13 @@ function App() {
             <ProtectedRoute user={user} path={ROUTES.SETTING} exact   >
               <Setting />
             </ProtectedRoute>
-            <IsUserLoggedIn user={user} loggedInPath={ROUTES.DASHBOARD} path={ROUTES.LANDPAGE}>
+            <IsUserLoggedIn user={user} exact loggedInPath={ROUTES.DASHBOARD} path={ROUTES.LANDPAGE}>
               <Landpage />
             </IsUserLoggedIn>
-            <IsUserLoggedIn user={user} loggedInPath={ROUTES.DASHBOARD} path={ROUTES.LOGIN}>
+            <IsUserLoggedIn user={user} exact loggedInPath={ROUTES.DASHBOARD} path={ROUTES.LOGIN}>
               <Signin />
             </IsUserLoggedIn>
-            <IsUserLoggedIn user={user} loggedInPath={ROUTES.DASHBOARD} path={ROUTES.SIGNUP}>
+            <IsUserLoggedIn user={user} exact loggedInPath={ROUTES.DASHBOARD} path={ROUTES.SIGNUP}>
               <Signup />
             </IsUserLoggedIn>
           </Switch>

@@ -1,8 +1,15 @@
+import { useEffect } from 'react'
 import Footer from '../components/footer/footer.component'
 import MainHeader from '../components/logedHeader/mainHeader.component'
 
 
 export default function ProfilePage() {
+
+
+
+    useEffect(() => {
+        document.title = 'Pets | Profile'
+    }, [])
 
     return (
         <>

@@ -1,11 +1,10 @@
-import {  useEffect, useState } from "react";
+import {  useState } from "react";
 import { Link } from "react-router-dom";
 import * as ROUTES from '../../constants/routes'
 import Menu from "../menu/menu.component";
 export default function MainHeader() {
 
-    const [menuShow, setMenuShow ]= useState(false)
-
+    const [menuShow, setMenuShow] = useState(false)
 
 
     return (
@@ -26,10 +25,10 @@ export default function MainHeader() {
                         <li><Link className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400" to={ROUTES.STORIES}>Stories</Link></li>
                     </ul>
                 </nav>
-                <button type="button" onClick={()=>setMenuShow(!menuShow)} className="lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 pointer-cursor">
-                    <img  className="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400" src="https://avatarfiles.alphacoders.com/128/thumb-128984.png" alt="Pic" />
+                <button type="button" onClick={() => setMenuShow(!menuShow)}  className="lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 pointer-cursor">
+                    <img className="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400" src="https://avatarfiles.alphacoders.com/128/thumb-128984.png" alt="Pic" />
                 </button>
-                {menuShow&&<Menu />}
+                {menuShow && <Menu />}
 
             </div>
 
