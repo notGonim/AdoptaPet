@@ -17,7 +17,6 @@ export default function Home() {
             <MainHeader />
             <Pets />
             <Footer />
-
         </>
     )
 

@@ -1,3 +1,4 @@
+import Skeleton from "react-loading-skeleton"
 import usePet from "../../hooks/usePet"
 import Card from "../card/card.component"
 
@@ -8,7 +9,17 @@ export default function Pets() {
     const pets = usePet()
     console.log(pets)
     return (
-        <div className="container grid grid-cols-4  p-5 m-9">
+        <div className="container grid grid-cols-4 m-10 ">
+            {!pets &&
+                (
+                    <>
+                        <Skeleton className="mb-10 mt-10 " count={4} width={60} height={290} />
+                        <Skeleton className="mb-10 mt-10 " count={4} width={60} height={290} />
+                        <Skeleton className="mb-10 mt-10" count={4} width={60} height={290} />
+                        <Skeleton className="mb-10 mt-10" count={4} width={60} height={290} />
+                    </>
+                )
+            }
             {
                 pets?.length > 0 ?
                     (pets.map((pet) =>
@@ -23,3 +34,7 @@ export default function Pets() {
         </div>
     )
 }
+/*
+
+
+*/
