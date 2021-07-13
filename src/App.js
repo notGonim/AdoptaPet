@@ -18,6 +18,7 @@ const Signup = lazy(() => import('./pages/SignupPage'))
 const Home = lazy(() => import('./pages/home'))
 const Profile = lazy(() => import('./pages/profile.page'))
 const Setting = lazy(() => import('./pages/setting.page'))
+const NotFound = lazy(() => import('./pages/404.page'))
 
 
 
@@ -57,6 +58,7 @@ function App() {
             <IsUserLoggedIn user={user} exact loggedInPath={ROUTES.DASHBOARD} path={ROUTES.SIGNUP}>
               <Signup />
             </IsUserLoggedIn>
+            <Route component={NotFound} />
           </Switch>
         </Suspense>
       </Router>
