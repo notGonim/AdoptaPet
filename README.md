@@ -74,14 +74,16 @@ $ npm start
 
 
 ## BackLog
-
-- [x] ~Connect WatchMe with firebase to provide authentication (login-signup)
+- [x] ~Add land page 
+- [x] ~Connect AdoptPet with firebase to provide authentication (login-signup)
+- [ ] Create auth with  Gmail 
 - [x] ~Handle auto redirect in different cases (user logged in and trying to visit login/signup pages | user is not logged in and trying to visit any page)~
 - [x] ~Handle form validation for (Login - Signup - ForgetPassword)
-- [ ] Create modal for Movies/series to show all details/actors/eps/seasons 
-- [x] Create modal for Search for a Movies/series  
-- [x] Create modals for Spinner for curr-user
-- [] Create modals for kids only
+- [x] ~Create modal for Pets to shows all pets we have in our dataset 
+- [] Create modal for Search for a Pet/Shelter  
+- [] ADD dark mode capability
+- [] add modal for pagination 
+
 
 
 ## License
