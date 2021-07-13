@@ -2,6 +2,7 @@ import Firebase from 'firebase/app';
 
 import 'firebase/firestore';
 import 'firebase/auth';
+import { seedDatabases } from '../seed';
 
 
 //here i want to import seed file 
@@ -25,5 +26,10 @@ const { FieldValue } = Firebase.firestore
 
 
 //here is where i wanna call the seed file (only once)
+
+//seedDatabases(firebase)
+
+
+
 export { firebase, FieldValue }
 
