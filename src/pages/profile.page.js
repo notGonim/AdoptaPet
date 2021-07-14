@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import Footer from '../components/footer/footer.component'
 import MainHeader from '../components/logedHeader/mainHeader.component'
+import ProfileComp from '../components/profile/profile.component'
 
 
 export default function ProfilePage() {
@@ -14,7 +15,8 @@ export default function ProfilePage() {
     return (
         <>
             <MainHeader />
-            <h1>home sweet home</h1>
+
+            <ProfileComp />
             <Footer />
 
         </>

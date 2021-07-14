@@ -26,7 +26,7 @@ const NotFound = lazy(() => import('./pages/404.page'))
 
 function App() {
 
-  const { user } = useAuthListener()
+  const { ...user } = useAuthListener()
   
 
   return (
