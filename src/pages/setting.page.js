@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import Footer from '../components/footer/footer.component'
 import MainHeader from '../components/logedHeader/mainHeader.component'
+import setting from '../assets/setting.svg'
 
 
 export default function SettingPage() {
@@ -15,7 +16,9 @@ export default function SettingPage() {
     return (
         <>
             <MainHeader />
-            <h1>home sweet home</h1>
+            <div className="conainer   flex-col flex justify-center items-center ">
+                <img src={setting} alt="404" className="w-6/12 mt-12" />
+            </div>
             <Footer />
 
         </>
