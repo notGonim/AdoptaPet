@@ -8,15 +8,15 @@ import useAuthListener from '../../hooks/useAuth.hook'
 
 export default function ProfileComp() {
 
-    const { ...user } = useAuthListener()
-    const { displayName } = { ...user }
+    const { ...data} = useAuthListener()
+    const { user } = { ...data }
     return (
 
         <div className="flex items-center justify-center">
             <div className="bg-white w-1/3 mt-10 rounded-lg">
                 <div className="flex items-center justify-center pt-10 flex-col">
                     <img src="https://avatarfiles.alphacoders.com/128/thumb-128984.png" alt="logo" className="rounded-full w-32" />
-                    <h1 className="text-gray-800 font-semibold text-xl mt-5">{displayName}</h1>
+                    <h1 className="text-gray-800 font-semibold text-xl mt-5">{user.displayName}</h1>
                     <h1 className="text-gray-500 text-sm">Cairo, Egypt</h1>
                     <h1 className="text-gray-500 text-sm p-4 text-center">
                         I have felt cats rubbing their faces against mine and touching my cheek with claws carefully sheathed. These things, to me, are expressions of love.
