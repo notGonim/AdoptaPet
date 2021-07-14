@@ -81,6 +81,7 @@ $ npm start
 - [x] ~ Handle form validation for (Login - Signup - ForgetPassword)
 - [x] ~ Create modal for Pets to shows all pets we have in our dataset 
 - [ ] ~ Create modal for Search for a Pet/Shelter  
+- [ ] ~ Create modal for Setting 
 - [ ] ~ ADD dark mode capability
 - [ ] ~ add modal for pagination 
 
