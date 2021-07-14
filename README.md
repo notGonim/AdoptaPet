@@ -76,7 +76,7 @@ $ npm start
 ## BackLog
 - [x] ~ Add land page 
 - [x] ~ Connect AdoptPet with firebase to provide authentication (login-signup)
-- [ ] Create auth with  Gmail 
+- [x] Create auth with  Gmail 
 - [x] ~ Handle auto redirect in different cases (user logged in and trying to visit login/signup pages | user is not logged in and trying to visit any page)~
 - [x] ~ Handle form validation for (Login - Signup - ForgetPassword)
 - [x] ~ Create modal for Pets to shows all pets we have in our dataset 
