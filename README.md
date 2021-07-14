@@ -66,15 +66,53 @@ $ npm start
 ### Screenshots
 
 
+<div align="center">
+  
+<h3 align="center">Login Page</h3>
 
+  ![image](https://github.com/notGonim/AdoptaPet/blob/main/src/assets/screenshots/1.PNG)
+  
+  <hr/>
+  
+ ![image](https://github.com/notGonim/AdoptaPet/blob/main/src/assets/screenshots/2.PNG)
+  
+  <hr/>
+ ![image](https://github.com/notGonim/AdoptaPet/blob/main/src/assets/screenshots/3.PNG)
+  
+  <hr/>
 
-
+ ![image](https://github.com/notGonim/AdoptaPet/blob/main/src/assets/screenshots/4.PNG)
+  
+  <hr/>
+  
+   ![image](https://github.com/notGonim/AdoptaPet/blob/main/src/assets/screenshots/5.PNG)
+  
+  <hr/>
+  
+   ![image](https://github.com/notGonim/AdoptaPet/blob/main/src/assets/screenshots/6.PNG)
+  
+  <hr/>
+  
+   ![image](https://github.com/notGonim/AdoptaPet/blob/main/src/assets/screenshots/7.PNG)
+  
+  <hr/>
+  
+   ![image](https://github.com/notGonim/AdoptaPet/blob/main/src/assets/screenshots/8.PNG)
+  
+  <hr/>
+  
+   ![image](https://github.com/notGonim/AdoptaPet/blob/main/src/assets/screenshots/9.PNG)
+  
+  
+  
+  <br/>
+</div>
 
 
 
 
 ## BackLog
-- [x] ~ Add land page 
+- [x] ~ Add landing page 
 - [x] ~ Connect AdoptPet with firebase to provide authentication (login-signup)
 - [x] Create auth with  Gmail 
 - [x] ~ Handle auto redirect in different cases (user logged in and trying to visit login/signup pages | user is not logged in and trying to visit any page)~
