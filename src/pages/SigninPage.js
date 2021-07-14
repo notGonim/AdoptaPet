@@ -30,6 +30,14 @@ export default function SignIn() {
         }
     }
 
+    const handleLoginWithGmail = async () => {
+
+        //   const provider = new firebase.auth.GoogleAuthProvider()
+        //   await firebase.auth().signInWithPopup(provider)
+        //     history.push(ROUTES.DASHBOARD)
+
+    }
+
     useEffect(() => {
         document.title = 'Login - Pets'
     }, [])
@@ -56,6 +64,8 @@ export default function SignIn() {
                     </form>
                 </div>
                 <div className="flex justify-center items-center flex-col w-full bg-white rounded p-4 border border-gray-primary ">
+                    <button type="button" onClick={handleLoginWithGmail}
+                        className={`bg-red-500 m-2 w-full rounded h-8 font-bold  text-white  `}>Loggin with Gmail</button>
                     <p className="text-sm">Don`t have an account? {''}
                         <Link to={ROUTES.SIGNUP} className="font-bold text-blue-500 ">Sign up</Link>
                     </p>
