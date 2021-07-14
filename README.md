@@ -76,7 +76,8 @@ $ npm start
   
  ![image](https://github.com/notGonim/AdoptaPet/blob/main/src/assets/screenshots/2.PNG)
   
-  <hr/>
+   <hr/>
+  
  ![image](https://github.com/notGonim/AdoptaPet/blob/main/src/assets/screenshots/3.PNG)
   
   <hr/>
